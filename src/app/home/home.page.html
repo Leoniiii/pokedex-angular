@@ -15,10 +15,12 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list>
+  <ion-grid>
     <!-- <app-message *ngFor="let message of getMessages()" [message]="message"></app-message> -->
-    <ion-item *ngFor="let pokemon of pokemons">
-      <ion-label> {{pokemon.name}} </ion-label>
-    </ion-item>
-  </ion-list>
+    <ion-row>
+      <ion-col *ngFor="let pokemon of pokemons" size="4">
+        <app-poke-card [pokemon]="pokemon"></app-poke-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

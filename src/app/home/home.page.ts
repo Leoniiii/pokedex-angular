@@ -17,8 +17,8 @@ export class HomePage implements OnInit {
 
   ngOnInit(): void {
     this.pokeapiService
-      .getAllPodemons()
-      .subscribe((pokemons: any) => (this.pokemons = pokemons.results));
+      .getAllPokemons()
+      .subscribe((pokemons: any) => (this.pokemons = pokemons));
   }
   refresh(ev) {
     setTimeout(() => {

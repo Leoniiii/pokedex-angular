@@ -5,9 +5,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class PokeapiService {
-  constructor(private http: HttpClient) {}
+  url: string;
+  constructor(private http: HttpClient) {
+    // this.url = 'https://workshop-pokeapi.vercel.app/pokemons';
+    this.url = 'http://localhost:3080';
+  }
 
-  getAllPodemons() {
-    return this.http.get('https://workshop-pokeapi.vercel.app/pokemons');
+  getAllPokemons() {
+    return this.http.get(this.url + '/pokemons');
   }
 }
